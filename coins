@@ -1,0 +1,9 @@
+# про монеты:
+n = 100
+coins = [1,3,5]
+def returnCoins(N):
+    f = [0,1]
+    for i in range(2, n+1):
+        f += [1+min(f[i-coin] for coin in coins if i >= coin)]
+    return f[n]
+print(returnCoins(n))
