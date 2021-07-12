@@ -1,0 +1,29 @@
+# про лестницу:
+s0, s1 = 1, 1
+n = int(input('enter positive integer: '))
+
+if n < 2:
+    print(1)
+else:
+    for i in range(2, n+1):
+        s_n = s0 + s1  # сколько способов забраться до n
+        s0 = s1
+        s1 = s_n
+    print(f"n = {i}, s_n = {s_n}")
+
+
+
+
+
+# второй вариант
+s0, s1 = 1,1
+n = int(input('enter a num: '))
+
+if n < 2:
+    print(1)
+else:
+    for i in range(2, n+1):
+        sum_n = s0 + s1
+        s0 = s1
+        s1 = sum_n
+    print(f'кол-во ступенек - {n}, способов их пройти - {sum_n}')
