@@ -1,0 +1,30 @@
+# решения задач о сдаче монет, первое решеине там где порядок монеток важен:
+def returnCoins(n):
+    f = [1,1]
+    coins = [1,3,5]
+    
+    for i in range(2, n+1):
+        new_value = 0
+        
+        for coin in coins:
+            if i >= coin:
+                new_value += f[i-coin]
+                
+        f += [new_value]
+        
+    return f[n]
+print(returnCoins(4))
+
+
+
+# второе решение с list comprehension
+def returnCoins2(n):
+    f = [1,1]
+    coins = [1,3,5]
+
+    for i in range(2, n+1):
+        f += [sum([f[i-coin] for coin in coins if i >= coin])]
+
+    return f[n]
+
+print(returnCoins2(10))
