@@ -1,0 +1,27 @@
+"""
+https://www.codewars.com/
+
+Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+Examples
+
+"This is an example!" ==> "sihT si na !elpmaxe"
+"double  spaces"      ==> "elbuod  secaps"
+"""
+
+
+def reverse_words(text):
+    lst = []
+    
+    for i in text.split():
+        i = i[::-1]
+        lst.append(i)
+        
+    if '  ' not in text:
+        return ' '.join(lst)
+    return '  '.join(lst)
+
+
+print(reverse_words('The quick brown fox jumps over the lazy dog.'))
+print(reverse_words('apple'))
+print(reverse_words('a b c d'))
+print(reverse_words('double  spaced  words'))
