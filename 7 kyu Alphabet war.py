@@ -34,35 +34,34 @@ AlphabetWar("wwwwwwz");  //=> Left side wins!
 
 
 def alphabet_war(fight):
-    score_left = 0
-    score_right = 0
+    total = 0
 
-    for i in fight[:len(fight)//2]:
+    for i in fight:
         if i == 'w':
-            score_left += 4
+            total -= 4
         elif i == 'p':
-            score_left += 3
+            total -= 3
         elif i == 'b':
-            score_left += 2
+            total -= 2
         elif i == 's':
-            score_left += 1
+            total -= 1
+        elif i == 'm':
+            total += 4
+        elif i == 'q':
+            total += 3
+        elif i == 'd':
+            total += 2
+        elif i == 'z':
+            total += 1
 
-    for j in fight[len(fight)//2:]:
-        if j == 'm':
-            score_right += 4
-        elif j == 'q':
-            score_right += 3
-        elif j == 'd':
-            score_right += 2
-        elif j == 'z':
-            score_right += 1
+    if total == 0:
+        answer = "Let's fight again!"
+    if total > 0:
+        answer = "Right side wins!"
+    if total < 0:
+        answer = "Left side wins!"
 
-    if score_left == score_right:
-        return "Let's fight again!"
-    elif score_left > score_right:
-        return 'Left side wins!'
-    return 'Right side wins!'
-
+    return answer
 
 
 print(alphabet_war("z"), "Right side wins!")
