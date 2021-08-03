@@ -23,3 +23,9 @@ def get_sum(a,b):
     max_num = max(a, b)
     
     return (max_num - min_num + 1) * (min_num + max_num) / 2
+
+
+# best answer:
+
+# def get_sum(a,b):
+#     return sum(range(min(a, b), max(a, b) + 1))
