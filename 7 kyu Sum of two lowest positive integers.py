@@ -15,3 +15,9 @@ def sum_two_smallest_numbers(numbers):
     lst.append(min(numbers))
     
     return sum(lst)
+
+
+# best of others:
+
+# def sum_two_smallest_numbers(numbers):
+#     return sum(sorted(numbers)[:2])
