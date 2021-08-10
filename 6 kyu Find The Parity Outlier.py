@@ -30,3 +30,20 @@ def find_outlier(integers):
         for i in integers:
             if i % 2 == 0:
                 return i
+            
+  # more better and fast:
+
+#  def find_outlier(integers):
+#     integers = list(set(integers))
+#     lst_even = []
+#     lst_odd = []
+
+#     for i in integers:
+#         if i % 2 == 0:
+#             lst_even.append(i)
+#         else:
+#             lst_odd.append(i)
+
+#     if len(lst_even) == 1:
+#         return lst_even[0]
+#     return lst_odd[0]
