@@ -24,4 +24,7 @@ def number(lines):
 #     return lst
 
     #second:
-    return [f'{i+1}: {lines[i]}' for i in range(len(lines))]
+#     return [f'{i+1}: {lines[i]}' for i in range(len(lines))]
+
+    # third:
+    return [f'{i+1}: {j}' for i,j in enumerate(lines)]
